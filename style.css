@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(51, 51, 138);
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.square-fill {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border: 1px solid pink;
+	animation: rotation 2s linear infinite;
+	overflow: hidden;
+}
+.square-fill::after {
+	content: "";
+	display: block;
+	background-color: skyblue;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	animation: filling 2s linear infinite;
+}
+@keyframes rotation {
+	45% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg);
+	}
+}
+@keyframes filling {
+	0% {
+		height: 0%;
+	}
+	50% {
+		height: 100%;
+	}
+	100% {
+		height: 100%;
+	}
+}
